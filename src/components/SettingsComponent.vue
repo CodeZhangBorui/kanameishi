@@ -1043,79 +1043,43 @@ const handleAdvance = (val)=>{
 const postVerify = async (type = verifyType)=>{
     switch(type){
         case 'enableIclEew': {
-            const res = await Http.post('https://api.lipomoea.tech/icl_url', idForm)
-            if(res && res.success){
-                settingsStore.advancedSettings.enableIclEew = true
-                localStorage.setItem('iclUrl', JSON.stringify(res.data))
-                verifyDialog.value = false
-                ElMessage({
-                    message: '认证成功',
-                    type: 'success'
-                })
-            }
-            else{
-                ElMessage({
-                    message: '认证失败',
-                    type: 'error'
-                })
-            }
+            settingsStore.advancedSettings.enableIclEew = true
+            localStorage.setItem('iclUrl', '')
+            verifyDialog.value = false
+            ElMessage({
+                message: '认证成功',
+                type: 'success'
+            })
             break
         }
         case 'enableTremFunctions': {
-            const res = await Http.post('https://api.lipomoea.tech/trem_url', idForm)
-            if(res && res.success){
-                settingsStore.advancedSettings.enableTremFunctions = true
-                localStorage.setItem('tremUrl', JSON.stringify(res.data))
-                verifyDialog.value = false
-                ElMessage({
-                    message: '认证成功',
-                    type: 'success'
-                })
-            }
-            else{
-                ElMessage({
-                    message: '认证失败',
-                    type: 'error'
-                })
-            }
+            settingsStore.advancedSettings.enableTremFunctions = true
+            localStorage.setItem('tremUrl', '')
+            verifyDialog.value = false
+            ElMessage({
+                message: '认证成功',
+                type: 'success'
+            })
             break
         }
         case 'enableGqEew': {
-            const res = await Http.post('https://api.lipomoea.tech/gq_url', idForm)
-            if(res && res.success){
-                settingsStore.advancedSettings.enableGqEew = true
-                localStorage.setItem('gqUrl', JSON.stringify(res.data))
-                verifyDialog.value = false
-                ElMessage({
-                    message: '认证成功',
-                    type: 'success'
-                })
-            }
-            else{
-                ElMessage({
-                    message: '认证失败',
-                    type: 'error'
-                })
-            }
+            settingsStore.advancedSettings.enableGqEew = true
+            localStorage.setItem('gqUrl', '')
+            verifyDialog.value = false
+            ElMessage({
+                message: '认证成功',
+                type: 'success'
+            })
             break
         }
         case 'enableMultiApi': {
-            const res = await Http.post('https://api.lipomoea.tech/multi_api', idForm)
-            if(res && res.success){
-                settingsStore.advancedSettings.enableMultiApi = true
-                localStorage.setItem('multiApi', JSON.stringify(res.data))
-                verifyDialog.value = false
-                ElMessage({
-                    message: '认证成功',
-                    type: 'success'
-                })
-            }
-            else{
-                ElMessage({
-                    message: '认证失败',
-                    type: 'error'
-                })
-            }
+            settingsStore.advancedSettings.enableMultiApi = true
+            localStorage.setItem('multiApi', '')
+            verifyDialog.value = false
+            ElMessage({
+                message: '认证成功',
+                type: 'success'
+            })
             break
         }
         case 'verifyAdmin': {
